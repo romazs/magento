@@ -327,7 +327,6 @@ def test_fn_remove_from_wish_list(setup):
     '//div[@class="column main"]/div[4]//span[@class="toolbar-number"]')).perform()
     time.sleep(3)
 
-    # //a[@title="Remove Item"]
     remove_hoodie_from_wish_list = driver.find_element(By.XPATH, '//a[contains(.,"Remove This Item")]')
     remove_hoodie_from_wish_list.click()
     time.sleep(3)
