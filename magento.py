@@ -419,10 +419,11 @@ def test_edit_cart_qty(setup):
 def test_search_hoodie(setup):
     driver = setup
 
-    driver.find_element(By.ID, "search").send_keys("hoodie")
+    driver.find_element(By.ID, "search").send_keys("Hero Hoodie")
+    time.sleep(3)
     driver.find_element(By.ID, "search").send_keys(Keys.ENTER)
     time.sleep(3)
 
-    assert driver.find_element(By.XPATH, '//div[text()="XS"]')  # verify XS size is displayed
+    assert driver.find_element(By.LINK_TEXT, 'Hero Hoodie').is_displayed()
 
     time.sleep(3)
