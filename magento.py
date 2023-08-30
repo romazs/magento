@@ -46,7 +46,7 @@ def test_fn_sign_up_gmail_and_yahoo(setup, users):
     driver.find_element(By.ID, "password").send_keys(users[3])
     driver.find_element(By.ID, "password-confirmation").send_keys(users[3])
     time.sleep(3)
-    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[3]/div/form/div/div[1]/button/span').click()
+    driver.find_element(By.XPATH, "//button[@class='action submit primary']").click()
     webdriver.support.ui.WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//span[text()="My Account"]')))
 
@@ -281,12 +281,12 @@ def test_fn_add_to_wish_list(setup):
     sign_in_button.click()
 
     navigate_to_hoodie = driver.find_element(By.XPATH,
-    '//img[@src="https://magento.softwaretestingboard.com/pub/media/catalog/product/cache/7c4c1ed835fbbf2269f24539582c6d44/m/h/mh07-gray_main_2.jpg"]')
+    "//ol[@class='product-items widget-product-grid']//a[contains(.,'Hero Hoodie')]")
     driver.execute_script("arguments[0].scrollIntoView(true);", navigate_to_hoodie)
     time.sleep(3)
 
     ActionChains(driver).move_to_element(driver.find_element(By.XPATH,
-    '//img[@src="https://magento.softwaretestingboard.com/pub/media/catalog/product/cache/7c4c1ed835fbbf2269f24539582c6d44/m/h/mh07-gray_main_2.jpg"]')).perform()
+    "//ol[@class='product-items widget-product-grid']//a[contains(.,'Hero Hoodie')]")).perform()
     time.sleep(3)
 
     add_to_wish_list = driver.find_element(By.XPATH,
@@ -318,8 +318,7 @@ def test_fn_remove_from_wish_list(setup):
     menu_click.click()
     time.sleep(3)
 
-    wish_list_click = driver.find_element(By.XPATH,
-    '//li[@class="customer-welcome active"]//a[@href="https://magento.softwaretestingboard.com/wishlist/"]')
+    wish_list_click = driver.find_element(By.XPATH, "(//a[contains(.,'My Wish List')])[1]")
     wish_list_click.click()
     time.sleep(3)
 
