@@ -280,13 +280,11 @@ def test_fn_add_to_wish_list(setup):
     sign_in_button = driver.find_element(By.ID, "send2")
     sign_in_button.click()
 
-    navigate_to_hoodie = driver.find_element(By.XPATH,
-    "//ol[@class='product-items widget-product-grid']//a[contains(.,'Hero Hoodie')]")
+    navigate_to_hoodie = driver.find_element(By.LINK_TEXT, "Hero Hoodie")
     driver.execute_script("arguments[0].scrollIntoView(true);", navigate_to_hoodie)
     time.sleep(3)
 
-    ActionChains(driver).move_to_element(driver.find_element(By.XPATH,
-    "//ol[@class='product-items widget-product-grid']//a[contains(.,'Hero Hoodie')]")).perform()
+    ActionChains(driver).move_to_element(driver.find_element(By.LINK_TEXT, "Hero Hoodie")).perform()
     time.sleep(3)
 
     add_to_wish_list = driver.find_element(By.XPATH,
