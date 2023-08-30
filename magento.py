@@ -348,17 +348,19 @@ def test_fn_add_to_comparison_list(setup):
     time.sleep(3)
 
     # add first item
-    ActionChains(driver).move_to_element(driver.find_element(By.XPATH,
-    '//*[@id="option-label-color-93-item-57"]')).perform()
+    ActionChains(driver).move_to_element(driver.find_element(By.LINK_TEXT, "Circe Hooded Ice Fleece")).perform()
+    time.sleep(3)
+
     driver.find_element(By.XPATH,
-    '/html/body/div[2]/main/div[3]/div[1]/div[3]/ol/li[1]/div/div/div[3]/div/div[2]/a[2]').click()
+    "//ol[@class='products list items product-items']/li[1]//a[contains(.,'Add to Compare')]").click()
     time.sleep(3)
 
     # add second item
-    ActionChains(driver).move_to_element(driver.find_element(By.XPATH,
-    '//*[@id="option-label-color-93-item-56"]')).perform()
+    ActionChains(driver).move_to_element(driver.find_element(By.LINK_TEXT, "Eos V-Neck Hoodie")).perform()
+    time.sleep(3)
+
     driver.find_element(By.XPATH,
-    '/html/body/div[2]/main/div[3]/div[1]/div[3]/ol/li[2]/div/div/div[3]/div/div[2]/a[2]').click()
+    "//ol[@class='products list items product-items']/li[2]//a[contains(.,'Add to Compare')]").click()
     time.sleep(3)
 
     # navigate to comparison list
