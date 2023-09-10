@@ -27,13 +27,13 @@ def setup():
     time.sleep(5)
 
 
-test_fn_sign_up_gmail_yahoo = [
+test_sign_up_gmail_yahoo = [
     ["josef", "Cohen", "examplesroma@yahoo.com", "starlight109#"],
     ["Natan", "Rubinstein", "examplesromm@gmail.com", "starlight409#"]
 ]
 
 
-@pytest.mark.parametrize("users", test_fn_sign_up_gmail_yahoo)
+@pytest.mark.parametrize("users", test_sign_up_gmail_yahoo)
 def test_sign_up_gmail_and_yahoo(setup, users):
     driver = setup
 
@@ -55,7 +55,7 @@ def test_sign_up_gmail_and_yahoo(setup, users):
     time.sleep(5)
 
 
-test_eh_sign_up_error_notification = [
+test_sign_up_error_notification = [
     ["Aviram", "Cohen", "mail01yahoo.com", "Aaaaaaa123"],
     [" ", "Rubinstein", "mail01@gmail.com", "aaaaaaA123"],
     ["Aviram", " ", "mail01@gmail.com", "aaaaaaA123"],
@@ -64,7 +64,7 @@ test_eh_sign_up_error_notification = [
 
 
 # 4 Warning notices upon registration: First name missing. Last name missing. "@" or ".com" missing.
-@pytest.mark.parametrize("users", test_eh_sign_up_error_notification)
+@pytest.mark.parametrize("users", test_sign_up_error_notification)
 def test_sign_up_error_notification(setup, users):
     driver = setup
 
