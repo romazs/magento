@@ -34,7 +34,7 @@ test_fn_sign_up_gmail_yahoo = [
 
 
 @pytest.mark.parametrize("users", test_fn_sign_up_gmail_yahoo)
-def test_fn_sign_up_gmail_and_yahoo(setup, users):
+def test_sign_up_gmail_and_yahoo(setup, users):
     driver = setup
 
     driver.find_element(By.LINK_TEXT, "Create an Account").click()
@@ -65,7 +65,7 @@ test_eh_sign_up_error_notification = [
 
 # 4 Warning notices upon registration: First name missing. Last name missing. "@" or ".com" missing.
 @pytest.mark.parametrize("users", test_eh_sign_up_error_notification)
-def test_eh_sign_up_error_notification(setup, users):
+def test_sign_up_error_notification(setup, users):
     driver = setup
 
     driver.find_element(By.LINK_TEXT, "Create an Account").click()
@@ -115,7 +115,7 @@ def test_eh_sign_up_error_notification(setup, users):
     time.sleep(5)
 
 
-def test_fn_purchase_hoodie(setup):
+def test_purchase_hoodie(setup):
     driver = setup
 
     navigate_to_hoodie = driver.find_element(By.XPATH, '//img[@alt="Hero Hoodie"]')
@@ -203,7 +203,7 @@ def test_fn_purchase_hoodie(setup):
     time.sleep(5)
 
 
-def test_fn_sort_by_price_asc(setup):
+def test_sort_by_price_asc(setup):
     driver = setup
 
     navigate_to_sale = driver.find_element(By.XPATH, '//a[@id="ui-id-8"]')
@@ -238,7 +238,7 @@ def test_fn_sort_by_price_asc(setup):
     time.sleep(5)
 
 
-def test_fn_sort_by_product_name_asc(setup):
+def test_sort_by_product_name_asc(setup):
     driver = setup
 
     navigate_to_sale = driver.find_element(By.XPATH, '//a[@id="ui-id-8"]')
@@ -267,7 +267,7 @@ def test_fn_sort_by_product_name_asc(setup):
     time.sleep(5)
 
 
-def test_fn_add_to_wish_list(setup):
+def test_add_to_wish_list(setup):
     driver = setup
 
     sign_in = driver.find_element(By.LINK_TEXT, "Sign In")
@@ -298,7 +298,7 @@ def test_fn_add_to_wish_list(setup):
     time.sleep(3)
 
 
-def test_fn_remove_from_wish_list(setup):
+def test_remove_from_wish_list(setup):
     driver = setup
 
     # Sign in
@@ -335,7 +335,7 @@ def test_fn_remove_from_wish_list(setup):
     time.sleep(3)
 
 
-def test_fn_add_to_comparison_list(setup):
+def test_add_to_comparison_list(setup):
     driver = setup
 
     # navigate to 'Sale' page
